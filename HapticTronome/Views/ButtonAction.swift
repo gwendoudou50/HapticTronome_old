@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  ButtonAction.swift
 //  HapticTronome
 //
 //  Created by Gwendal Aubé on 07/02/2022.
@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ButtonAction: View {
     var body: some View {
-        ButtonAction()
+        Image(systemName: "play")
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct ButtonAction_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ButtonAction()
     }
 }
