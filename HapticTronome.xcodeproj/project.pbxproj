@@ -51,8 +51,9 @@
 		84E993A027B1AE4300F83F10 /* HapticTronome */ = {
 			isa = PBXGroup;
 			children = (
-				84E993A127B1AE4300F83F10 /* HapticTronomeApp.swift */,
-				84E993A327B1AE4300F83F10 /* ContentView.swift */,
+				84E993B127B1B5C900F83F10 /* Controllers */,
+				84E993B027B1B5BC00F83F10 /* Views */,
+				84E993AF27B1B5AC00F83F10 /* Models */,
 				84E993A527B1AE4400F83F10 /* Assets.xcassets */,
 				84E993A727B1AE4400F83F10 /* Preview Content */,
 			);
@@ -65,6 +66,29 @@
 				84E993A827B1AE4400F83F10 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		84E993AF27B1B5AC00F83F10 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		84E993B027B1B5BC00F83F10 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				84E993A327B1AE4300F83F10 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		84E993B127B1B5C900F83F10 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				84E993A127B1AE4300F83F10 /* HapticTronomeApp.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
