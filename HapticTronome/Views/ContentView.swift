@@ -16,7 +16,7 @@ struct ContentView: View {
             Spacer()
             
             //Logo
-            Image("HapticTronomeLogo")
+            Image("HapticTronomeLogoBis")
                 .resizable()
                 .scaledToFill()
                 .frame(width: 203, height: 203)
