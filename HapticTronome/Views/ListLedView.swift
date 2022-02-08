@@ -19,6 +19,7 @@ struct ListLedView: View {
                 LedView()
             }
         }
+        .frame(height: 60)
     }
 }
 

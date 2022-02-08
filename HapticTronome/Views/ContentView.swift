@@ -9,38 +9,43 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            // LED
-            ListLedView()
-            
-            Spacer()
-            
-            //Logo
-            Image("HapticTronomeLogoBis")
-                .resizable()
-                .scaledToFill()
-                .frame(width: 203, height: 203)
-                
-                        
-            Spacer()
-            
-            // Buttons Action
-            HStack {
-                Button {
-                    print("Play button was tapped")
-                } label: {
-                    Image(systemName: "play")
-            }.buttonStyle(ButtonAction())
+        
+        NavigationView {
+            VStack {
+                //LED
+                ListLedView()
+                    .navigationTitle("HapticTronome")
                 
                 Spacer()
                 
-                Button {
-                    print("Settings button was tapped")
-                } label: {
-                    Text("4/4")
+                //Logo
+                Image("HapticTronomeLogoBis")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 203, height: 203)
+                    
+                            
+                Spacer()
+                           
+                
+                //Buttons Action
+                HStack {
+                    Button {
+                        print("Play button was tapped")
+                    } label: {
+                        Image(systemName: "play")
                 }.buttonStyle(ButtonAction())
+                    
+                    Spacer()
+                    
+                    Button {
+                        print("Settings button was tapped")
+                    } label: {
+                        Text("4/4")
+                    }.buttonStyle(ButtonAction())
+                }
+                .padding()
             }
-            .padding()
         }
     }
 }
