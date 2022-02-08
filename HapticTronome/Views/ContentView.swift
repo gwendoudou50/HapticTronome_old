@@ -15,6 +15,7 @@ struct ContentView: View {
                 //LED
                 ListLedView()
                     .navigationTitle("HapticTronome")
+                    .shadow(color: .black.opacity(0.25), radius: 4, x: 2, y: 2)
                 
                 Spacer()
                 
