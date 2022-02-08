@@ -27,7 +27,14 @@ struct ContentView: View {
                     
                             
                 Spacer()
-                           
+                        
+                //Tempo Button
+                ZStack {
+                    TempoButton()
+                        .rotationEffect(.init(degrees: -120))
+                    Graduate()
+                }
+                .padding()
                 
                 //Buttons Action
                 HStack {
