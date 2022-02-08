@@ -16,7 +16,7 @@ struct ButtonAction: ButtonStyle {
                 .frame(width: 55, height: 55)
                 .background(
                     ZStack {
-                        Color.red.opacity(0.7)
+                        Color.red
                         
                         RoundedRectangle(cornerRadius: 10, style: .continuous)
                             .foregroundColor(.white).opacity(0.7)
