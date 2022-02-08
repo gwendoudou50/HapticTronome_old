@@ -16,12 +16,17 @@ struct ContentView: View {
                 Image(systemName: "play")
         }.buttonStyle(ButtonAction())
             
+            Spacer()
+            
             Button {
                 print("Settings button was tapped")
             } label: {
                 Text("4/4")
             }.buttonStyle(ButtonAction())
         }
+        .padding()
+        
+        
     }
 }
 
