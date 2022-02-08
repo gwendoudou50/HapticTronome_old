@@ -7,14 +7,20 @@
 
 import SwiftUI
 
-struct ButtonAction: View {
-    var body: some View {
-        Image(systemName: "play")
+struct ButtonAction: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        ZStack {
+            configuration.label
+            Rectangle()
+                .fill(Color.red)
+                .frame(width: 55, height: 55)
+                .overlay(
+                    Rectangle()
+                        .stroke(Color.black, lineWidth: 20)
+                )
+                .border(Color.blue)
+                
+        }
     }
 }
 
-struct ButtonAction_Previews: PreviewProvider {
-    static var previews: some View {
-        ButtonAction()
-    }
-}
