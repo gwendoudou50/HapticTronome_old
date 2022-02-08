@@ -46,6 +46,7 @@ struct ContentView: View {
                 }
                 .padding()
             }
+            .background(Color(red: 242 / 255, green: 242 / 255, blue: 246 / 255))
         }
     }
 }
