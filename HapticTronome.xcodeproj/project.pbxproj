@@ -10,6 +10,7 @@
 		842937C727B2CE730007A48F /* ListLedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842937C627B2CE730007A48F /* ListLedView.swift */; };
 		842937CD27B2D3B00007A48F /* HapticTronomeLogoBis.svg in Resources */ = {isa = PBXBuildFile; fileRef = 842937CC27B2D3B00007A48F /* HapticTronomeLogoBis.svg */; };
 		842937CF27B2DC760007A48F /* TempoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842937CE27B2DC760007A48F /* TempoButton.swift */; };
+		8444A07027B33626008027BA /* Graduate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444A06F27B33626008027BA /* Graduate.swift */; };
 		84964DC227B2B3B000F57CA6 /* LedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84964DC127B2B3B000F57CA6 /* LedView.swift */; };
 		84E993A227B1AE4300F83F10 /* HapticTronomeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E993A127B1AE4300F83F10 /* HapticTronomeApp.swift */; };
 		84E993A427B1AE4300F83F10 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E993A327B1AE4300F83F10 /* ContentView.swift */; };
@@ -22,6 +23,7 @@
 		842937C627B2CE730007A48F /* ListLedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLedView.swift; sourceTree = "<group>"; };
 		842937CC27B2D3B00007A48F /* HapticTronomeLogoBis.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HapticTronomeLogoBis.svg; sourceTree = "<group>"; };
 		842937CE27B2DC760007A48F /* TempoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoButton.swift; sourceTree = "<group>"; };
+		8444A06F27B33626008027BA /* Graduate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graduate.swift; sourceTree = "<group>"; };
 		84964DC127B2B3B000F57CA6 /* LedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LedView.swift; sourceTree = "<group>"; };
 		84E9939E27B1AE4300F83F10 /* HapticTronome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HapticTronome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E993A127B1AE4300F83F10 /* HapticTronomeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticTronomeApp.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				84E993A327B1AE4300F83F10 /* ContentView.swift */,
 				842937CE27B2DC760007A48F /* TempoButton.swift */,
+				8444A06F27B33626008027BA /* Graduate.swift */,
 				842937C627B2CE730007A48F /* ListLedView.swift */,
 				84964DC127B2B3B000F57CA6 /* LedView.swift */,
 				84964DBE27B29BE400F57CA6 /* Styles */,
@@ -186,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84964DC227B2B3B000F57CA6 /* LedView.swift in Sources */,
+				8444A07027B33626008027BA /* Graduate.swift in Sources */,
 				84E993A427B1AE4300F83F10 /* ContentView.swift in Sources */,
 				842937C727B2CE730007A48F /* ListLedView.swift in Sources */,
 				842937CF27B2DC760007A48F /* TempoButton.swift in Sources */,

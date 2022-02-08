@@ -7,7 +7,13 @@
 
 import SwiftUI
 
+let pointerWidth: CGFloat = 8
+let pointerHeight: CGFloat = 55
+
 struct TempoButton: View {
+    
+    let width: CGFloat = 166
+    
     var body: some View {
         
         ZStack {
@@ -15,7 +21,7 @@ struct TempoButton: View {
             //Circle
             Image(systemName: "circle")
                 .foregroundColor(.red)
-                .frame(width: 166, height: 166)
+                .frame(width: width, height: width)
                 .background(
                     ZStack {
                         Color.red
@@ -37,10 +43,11 @@ struct TempoButton: View {
                     }
                 )
             .clipShape(Circle())
+            .shadow(color: .black.opacity(0.25), radius: 4, x: 2, y: 2)
             
             //Pointer
             Pointer()
-                .offset(x: 0, y: -55.5)
+                .offset(x: 0, y: width - (55 * 4) - 1.5)
         }
     }
 }
@@ -56,13 +63,13 @@ struct Pointer: View {
         ZStack {
             RoundedRectangle(cornerRadius: 2)
                 .foregroundColor(.black)
-                .frame(width: 8, height: 55)
+                .frame(width: pointerWidth, height: pointerHeight)
             
             Rectangle()
                 .foregroundColor(.white)
                 .blur(radius: 1)
                 .clipShape(Rectangle())
-                .frame(width: 5, height: 52)
+                .frame(width: pointerWidth - 3, height: pointerHeight - 3)
         }
     }
 }
