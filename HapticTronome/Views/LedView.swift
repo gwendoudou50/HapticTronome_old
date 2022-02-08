@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct LedView: View {
+    
     var color: Color = .white
+    
     var body: some View {
         Image(systemName: "circle")
             .foregroundColor(color)

@@ -11,11 +11,10 @@ struct ContentView: View {
     var body: some View {
         VStack {
             // LED
-            HStack{
-                
-            }
+            ListLedView()
             
-            
+            Spacer()
+                        
             
             // Buttons Action
             HStack {
