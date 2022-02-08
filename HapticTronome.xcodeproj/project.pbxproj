@@ -34,6 +34,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84964DBE27B29BE400F57CA6 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				84E993B227B1BC2800F83F10 /* ButtonAction.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
 		84E9939527B1AE4300F83F10 = {
 			isa = PBXGroup;
 			children = (
@@ -81,7 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				84E993A327B1AE4300F83F10 /* ContentView.swift */,
-				84E993B227B1BC2800F83F10 /* ButtonAction.swift */,
+				84964DBE27B29BE400F57CA6 /* Styles */,
 			);
 			path = Views;
 			sourceTree = "<group>";
