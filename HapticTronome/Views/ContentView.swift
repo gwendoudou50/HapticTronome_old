@@ -14,7 +14,15 @@ struct ContentView: View {
             ListLedView()
             
             Spacer()
+            
+            //Logo
+            Image("HapticTronomeLogo")
+                .resizable()
+                .scaledToFill()
+                .frame(width: 203, height: 203)
+                
                         
+            Spacer()
             
             // Buttons Action
             HStack {
