@@ -9,24 +9,33 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        HStack {
-            Button {
-                print("Play button was tapped")
-            } label: {
-                Image(systemName: "play")
-        }.buttonStyle(ButtonAction())
+        VStack {
+            // LED
+            HStack{
+                
+                    
+            }
             
-            Spacer()
             
-            Button {
-                print("Settings button was tapped")
-            } label: {
-                Text("4/4")
+            
+            // Buttons Action
+            HStack {
+                Button {
+                    print("Play button was tapped")
+                } label: {
+                    Image(systemName: "play")
             }.buttonStyle(ButtonAction())
+                
+                Spacer()
+                
+                Button {
+                    print("Settings button was tapped")
+                } label: {
+                    Text("4/4")
+                }.buttonStyle(ButtonAction())
+            }
+            .padding()
         }
-        .padding()
-        
-        
     }
 }
 
