@@ -9,11 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Button {
-            print("Play button was tapped")
-        } label: {
-            Image(systemName: "play")
+        HStack {
+            Button {
+                print("Play button was tapped")
+            } label: {
+                Image(systemName: "play")
         }.buttonStyle(ButtonAction())
+            
+            Button {
+                print("Settings button was tapped")
+            } label: {
+                Text("4/4")
+            }.buttonStyle(ButtonAction())
+        }
     }
 }
 
