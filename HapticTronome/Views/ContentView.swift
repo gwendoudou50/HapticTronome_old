@@ -16,7 +16,8 @@ struct ContentView: View {
                 ListLedView()
                     .navigationTitle("HapticTronome")
                     .shadow(color: .black.opacity(0.25), radius: 4, x: 2, y: 2)
-                
+                    .padding(-10)
+            
                 Spacer()
                 
                 //Logo
@@ -29,12 +30,24 @@ struct ContentView: View {
                 Spacer()
                         
                 //Tempo Button
-                ZStack {
-                    TempoButton()
-                        .rotationEffect(.init(degrees: -120))
-                    Graduate()
+                VStack {
+                    VStack {
+                        Text("40")
+                            .font(.title)
+                            .fontWeight(.bold)
+                        Text("BPM")
+                            .font(.subheadline)
+                            .fontWeight(.medium)
+                    }
+                    
+                    
+                    ZStack {
+                        TempoButton()
+                            .rotationEffect(.init(degrees: -120))
+                        Graduate()
+                    }
+                    .padding()
                 }
-                .padding()
                 
                 //Buttons Action
                 HStack {
