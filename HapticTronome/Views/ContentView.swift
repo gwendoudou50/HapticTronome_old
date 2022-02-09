@@ -47,6 +47,16 @@ struct ContentView: View {
                         Graduate()
                     }
                     .padding()
+                    .padding(.bottom, -50)
+                    
+                    HStack {
+                        Text("40")
+                            .padding(.horizontal, 75)
+                        Text("400")
+                            .padding(.horizontal,75)
+                    }
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
                 }
                 
                 //Buttons Action
