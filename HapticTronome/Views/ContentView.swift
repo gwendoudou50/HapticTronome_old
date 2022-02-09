@@ -10,11 +10,10 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         
-        NavigationView {
+        NavigationView {            
             VStack {
                 //LED
                 ListLedView()
-                    .navigationTitle("HapticTronome")
                     .shadow(color: .black.opacity(0.25), radius: 4, x: 2, y: 2)
                     .padding(-10)
             
@@ -79,6 +78,7 @@ struct ContentView: View {
                 .offset(y: -40)
             }
             .background(Color(red: 242 / 255, green: 242 / 255, blue: 246 / 255))
+            .navigationTitle("HapticTronome")
         }
     }
 }
