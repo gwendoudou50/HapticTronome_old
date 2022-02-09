@@ -65,7 +65,7 @@ struct ContentView: View {
                         print("Play button was tapped")
                     } label: {
                         Image(systemName: "play")
-                }.buttonStyle(ButtonAction())
+                    }.buttonStyle(ButtonAction())
                     
                     Spacer()
                     
@@ -76,6 +76,7 @@ struct ContentView: View {
                     }.buttonStyle(ButtonAction())
                 }
                 .padding()
+                .offset(y: -40)
             }
             .background(Color(red: 242 / 255, green: 242 / 255, blue: 246 / 255))
         }
