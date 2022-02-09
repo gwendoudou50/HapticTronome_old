@@ -46,18 +46,6 @@ struct SettingsView: View {
                     .background(.white)
                     .cornerRadius(10)
                 }
-                
-                TabView {
-                    SettingsView()
-                        .tabItem {
-                            Label("Paramètres", systemImage: "gear")
-                        }
-                    
-                    ContentView()
-                        .tabItem {
-                            Label("Lecteur", systemImage: "metronome")
-                        }
-                }
             }
             .background(Color(red: 242 / 255, green: 242 / 255, blue: 246 / 255))
             .navigationTitle("Parmètres")
