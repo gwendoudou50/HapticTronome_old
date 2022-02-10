@@ -8,19 +8,22 @@
 import SwiftUI
 
 struct Graduate: View {
+    // maxAngle = 280 because 7 * 40 = 280
     
     let width: CGFloat = 166
     
     var body: some View {
         ZStack {
-            ForEach (1..<8) { index in
+            ForEach (1...7, id: \.self) { index in
                 Triangle()
                     .fill(.red)
                     .frame(width: 7, height: 10)
+                // moving view left
+                // and rotating view as per angle...
                     .offset(y: -(width - (width / 2) + 10))
-                    .rotationEffect(.init(degrees: Double(index * 40)))
-                    .rotationEffect(.init(degrees: 199.5))
+                    .rotationEffect(.init(degrees: Double(index) * 40))
             }
+            .rotationEffect(.init(degrees: -160))
         }
     }
 }

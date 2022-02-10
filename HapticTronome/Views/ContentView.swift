@@ -11,8 +11,7 @@ struct ContentView: View {
     
     //Changing the background color of the TabBar
     init() {
-        UITabBar.appearance().backgroundColor = UIColor(red: 249/255, green: 249/255, blue: 249/255, alpha: 0.94)
-        
+        UITabBar.appearance().backgroundColor = UIColor(red: 249/255, green: 249/255, blue: 249/255, alpha: 0.94)        
     }
     
     var body: some View {

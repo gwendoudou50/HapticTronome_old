@@ -34,6 +34,7 @@ struct HomeView: View {
                         Text("40")
                             .font(.title)
                             .fontWeight(.bold)
+//
                         Text("BPM")
                             .font(.subheadline)
                             .fontWeight(.medium)

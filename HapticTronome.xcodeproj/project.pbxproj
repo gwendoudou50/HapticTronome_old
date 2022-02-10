@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		842937C727B2CE730007A48F /* ListLedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842937C627B2CE730007A48F /* ListLedView.swift */; };
-		842937CD27B2D3B00007A48F /* HapticTronomeLogoBis.svg in Resources */ = {isa = PBXBuildFile; fileRef = 842937CC27B2D3B00007A48F /* HapticTronomeLogoBis.svg */; };
 		842937CF27B2DC760007A48F /* TempoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842937CE27B2DC760007A48F /* TempoButton.swift */; };
 		8444A07027B33626008027BA /* Graduate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444A06F27B33626008027BA /* Graduate.swift */; };
 		8454314B27B443AB00232A86 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454314A27B443AB00232A86 /* HomeView.swift */; };
@@ -23,7 +22,6 @@
 
 /* Begin PBXFileReference section */
 		842937C627B2CE730007A48F /* ListLedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLedView.swift; sourceTree = "<group>"; };
-		842937CC27B2D3B00007A48F /* HapticTronomeLogoBis.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HapticTronomeLogoBis.svg; sourceTree = "<group>"; };
 		842937CE27B2DC760007A48F /* TempoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoButton.swift; sourceTree = "<group>"; };
 		8444A06F27B33626008027BA /* Graduate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graduate.swift; sourceTree = "<group>"; };
 		8454314A27B443AB00232A86 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -106,7 +104,6 @@
 		84E993AF27B1B5AC00F83F10 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				842937CC27B2D3B00007A48F /* HapticTronomeLogoBis.svg */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -190,7 +187,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				84E993A927B1AE4400F83F10 /* Preview Assets.xcassets in Resources */,
-				842937CD27B2D3B00007A48F /* HapticTronomeLogoBis.svg in Resources */,
 				84E993A627B1AE4400F83F10 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
