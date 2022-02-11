@@ -8,18 +8,20 @@
 import SwiftUI
 
 struct HomeView: View {
+    
     var body: some View {
         NavigationView {
             VStack {
                 Spacer()
-                //LED
+                
+                // LED
                 ListLedView()
                     .shadow(color: .black.opacity(0.25), radius: 4, x: 2, y: 2)
                     .padding(-10)
             
                 Spacer()
                 
-                //Logo
+                // Logo
                 Image("HapticTronomeLogoBis")
                     .resizable()
                     .scaledToFill()
@@ -28,13 +30,13 @@ struct HomeView: View {
                             
                 Spacer()
                         
-                //Tempo Button
+                // Tempo Button
                 VStack {
                     VStack {
-                        Text("40")
+                        Text("400")
                             .font(.title)
                             .fontWeight(.bold)
-//
+
                         Text("BPM")
                             .font(.subheadline)
                             .fontWeight(.medium)
@@ -43,7 +45,6 @@ struct HomeView: View {
                     
                     ZStack {
                         TempoButton()
-                            .rotationEffect(.init(degrees: -120))
                         Graduate()
                     }
                     .padding()
@@ -59,7 +60,7 @@ struct HomeView: View {
                     .foregroundColor(.secondary)
                 }
                 
-                //Buttons Action
+                // Buttons Action
                 HStack {
                     Button {
                         print("Play button was tapped")
