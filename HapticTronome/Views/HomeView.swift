@@ -9,6 +9,8 @@ import SwiftUI
 
 struct HomeView: View {
     
+    @StateObject var homeData = HomeViewModel()
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -33,7 +35,7 @@ struct HomeView: View {
                 // Tempo Button
                 VStack {
                     VStack {
-                        Text("400")
+                        Text(String(format: "%.0f", homeData.progress * 200))
                             .font(.title)
                             .fontWeight(.bold)
 
@@ -45,6 +47,11 @@ struct HomeView: View {
                     
                     ZStack {
                         TempoButton()
+                            .rotationEffect(.init(degrees: homeData.angle))
+                            .gesture(
+                                DragGesture().onChanged(homeData.onDrag(value:))
+                            )
+                            .rotationEffect(.init(degrees: -120))
                         Graduate()
                     }
                     .padding()
