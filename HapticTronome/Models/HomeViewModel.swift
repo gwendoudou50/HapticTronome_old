@@ -6,7 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
 
-class HomeViewModel {
+class HomeViewModel: ObservableObject {
+    @Published var progress: CGFloat = 0
+    @Published var angle: Double = 0
     
+
 }
