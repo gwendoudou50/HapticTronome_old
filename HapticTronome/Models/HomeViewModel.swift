@@ -9,17 +9,21 @@ import Foundation
 import SwiftUI
 
 class HomeViewModel: ObservableObject {
+    
     @Published var progress: CGFloat = 0
     @Published var angle: Double = 0
     
+    // it used when the button is turning
     func onChanged(value: DragGesture.Value) {
-        let translation = value.location
         
+        // calculating radians...
+        let translation = value.location
         let vector = CGVector(dx: translation.x, dy: translation.y)
         
-        // - 10 is circle radius since circle size is 20
+        // -10 to eliminate drag gesture...
         let radians = atan2(vector.dy - 10, vector.dx - 10)
         
+        // converting to angle...
         var angle = radians * 180 / .pi
         
         if angle < 0 {
@@ -28,11 +32,9 @@ class HomeViewModel: ObservableObject {
         
         // limiting angle from 0 to 240
         if angle <= 240 {
-            withAnimation(Animation.linear(duration: 0.15)) {
-                let progress = angle / 240
-                self.progress = progress
-                self.angle = Double(angle)
-            }
+            let progress = angle / 240
+            self.progress = progress
+            self.angle = Double(angle)
         }
     }
 }
