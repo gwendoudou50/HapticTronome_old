@@ -28,7 +28,11 @@ class HomeViewModel: ObservableObject {
         
         // limiting angle from 0 to 240
         if angle <= 240 {
-            self.angle = Double(angle)
+            withAnimation(Animation.linear(duration: 0.15)) {
+                let progress = angle / 240
+                self.progress = progress
+                self.angle = Double(angle)
+            }
         }
     }
 }

@@ -15,7 +15,7 @@ struct TempoButton: View {
 //    let width: CGFloat = 166
     var width = UIScreen.main.bounds.width / 2
     
-    @StateObject var homeData = HomeViewModel()
+    @ObservedObject var homeData = HomeViewModel()
     
     
     var body: some View {
@@ -60,9 +60,7 @@ struct TempoButton: View {
                 )
             // rotating to start point...
             // 240 - 30 = 210
-                .rotationEffect(.init(degrees: -210))
-            
-            
+                .rotationEffect(.init(degrees: -210))            
         }
     }
 }
