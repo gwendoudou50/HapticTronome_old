@@ -7,13 +7,15 @@
 
 import SwiftUI
 
-let BPM_MIN = 40
-let BPM_MAX = 400
-
 struct HomeView: View {
     
+    let BpmMin = 40
+    let BpmMax = 400
     
     @StateObject var homeData = HomeViewModel()
+    
+    @EnvironmentObject var audioManager: AudioManager
+    @State var player = AudioManager().player?.isPlaying
     
     var body: some View {
         NavigationView {
@@ -39,7 +41,6 @@ struct HomeView: View {
                 // Tempo Button
                 VStack {
                     VStack {
-//                        Text(String(format: "%.0f", 40 + homeData.progress * (400 - 40)))
                         Text("\(Int(40 + homeData.progress * (400 - 40)))")
                         .font(.title)
                             .fontWeight(.bold)
@@ -58,9 +59,9 @@ struct HomeView: View {
                     .padding(.bottom, -50)
                     
                     HStack {
-                        Text("\(BPM_MIN)")
+                        Text("\(BpmMin)")
                             .padding(.horizontal, 75)
-                        Text("\(BPM_MAX)")
+                        Text("\(BpmMax)")
                             .padding(.horizontal,75)
                     }
                     .font(.subheadline)
@@ -70,9 +71,11 @@ struct HomeView: View {
                 // Buttons Action
                 HStack {
                     Button {
-                        print("Play button was tapped")
+//                        print("Play button was tapped")
+//                        AudioManager.shared.startPlayer()
+                        audioManager.isPlaying ? self.audioManager.Stop() : self.audioManager.startPlayer()
                     } label: {
-                        Image(systemName: "play")
+                        Image(systemName: audioManager.isPlaying ? "stop" : "play")
                     }.buttonStyle(ButtonAction())
                     
                     Spacer()
@@ -95,5 +98,6 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .environmentObject(AudioManager())
     }
 }

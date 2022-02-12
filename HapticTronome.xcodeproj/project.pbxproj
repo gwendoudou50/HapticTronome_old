@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		842937C727B2CE730007A48F /* ListLedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842937C627B2CE730007A48F /* ListLedView.swift */; };
 		842937CF27B2DC760007A48F /* TempoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842937CE27B2DC760007A48F /* TempoButton.swift */; };
+		84406BB127B8249C00F1BD82 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84406BB027B8249C00F1BD82 /* AudioManager.swift */; };
+		84406BB427B82EA300F1BD82 /* hit-hat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84406BB227B82EA300F1BD82 /* hit-hat.wav */; };
+		84406BB527B82EA300F1BD82 /* kick.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84406BB327B82EA300F1BD82 /* kick.wav */; };
 		8444A07027B33626008027BA /* Graduate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444A06F27B33626008027BA /* Graduate.swift */; };
 		8454314B27B443AB00232A86 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454314A27B443AB00232A86 /* HomeView.swift */; };
 		84964DC227B2B3B000F57CA6 /* LedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84964DC127B2B3B000F57CA6 /* LedView.swift */; };
@@ -24,6 +27,10 @@
 /* Begin PBXFileReference section */
 		842937C627B2CE730007A48F /* ListLedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLedView.swift; sourceTree = "<group>"; };
 		842937CE27B2DC760007A48F /* TempoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoButton.swift; sourceTree = "<group>"; };
+		84406BB027B8249C00F1BD82 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		84406BB227B82EA300F1BD82 /* hit-hat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "hit-hat.wav"; sourceTree = "<group>"; };
+		84406BB327B82EA300F1BD82 /* kick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = kick.wav; sourceTree = "<group>"; };
+		84406BB627B8306500F1BD82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8444A06F27B33626008027BA /* Graduate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graduate.swift; sourceTree = "<group>"; };
 		8454314A27B443AB00232A86 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		84964DC127B2B3B000F57CA6 /* LedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LedView.swift; sourceTree = "<group>"; };
@@ -86,10 +93,13 @@
 		84E993A027B1AE4300F83F10 /* HapticTronome */ = {
 			isa = PBXGroup;
 			children = (
+				84406BB627B8306500F1BD82 /* Info.plist */,
 				84E993B127B1B5C900F83F10 /* Controllers */,
 				84E993B027B1B5BC00F83F10 /* Views */,
 				84E993AF27B1B5AC00F83F10 /* Models */,
 				84E993A527B1AE4400F83F10 /* Assets.xcassets */,
+				84406BB227B82EA300F1BD82 /* hit-hat.wav */,
+				84406BB327B82EA300F1BD82 /* kick.wav */,
 				84E993A727B1AE4400F83F10 /* Preview Content */,
 			);
 			path = HapticTronome;
@@ -107,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				84E4847B27B7055E00F082EA /* HomeViewModel.swift */,
+				84406BB027B8249C00F1BD82 /* AudioManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -190,6 +201,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				84E993A927B1AE4400F83F10 /* Preview Assets.xcassets in Resources */,
+				84406BB427B82EA300F1BD82 /* hit-hat.wav in Resources */,
+				84406BB527B82EA300F1BD82 /* kick.wav in Resources */,
 				84E993A627B1AE4400F83F10 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,6 +224,7 @@
 				842937CF27B2DC760007A48F /* TempoButton.swift in Sources */,
 				84E993B327B1BC2800F83F10 /* ButtonAction.swift in Sources */,
 				84E993A227B1AE4300F83F10 /* HapticTronomeApp.swift in Sources */,
+				84406BB127B8249C00F1BD82 /* AudioManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +358,7 @@
 				DEVELOPMENT_TEAM = 748Z57AM2S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HapticTronome/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -373,6 +388,7 @@
 				DEVELOPMENT_TEAM = 748Z57AM2S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HapticTronome/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
