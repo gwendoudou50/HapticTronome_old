@@ -7,7 +7,11 @@
 
 import SwiftUI
 
+let BPM_MIN = 40
+let BPM_MAX = 400
+
 struct HomeView: View {
+    
     
     @StateObject var homeData = HomeViewModel()
     
@@ -35,8 +39,9 @@ struct HomeView: View {
                 // Tempo Button
                 VStack {
                     VStack {
-                        Text(String(format: "%.0f", 40 + homeData.progress * (400 - 40)))
-                            .font(.title)
+//                        Text(String(format: "%.0f", 40 + homeData.progress * (400 - 40)))
+                        Text("\(Int(40 + homeData.progress * (400 - 40)))")
+                        .font(.title)
                             .fontWeight(.bold)
 
                         Text("BPM")
@@ -53,9 +58,9 @@ struct HomeView: View {
                     .padding(.bottom, -50)
                     
                     HStack {
-                        Text("40")
+                        Text("\(BPM_MIN)")
                             .padding(.horizontal, 75)
-                        Text("400")
+                        Text("\(BPM_MAX)")
                             .padding(.horizontal,75)
                     }
                     .font(.subheadline)
