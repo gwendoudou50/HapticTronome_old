@@ -12,16 +12,19 @@ let pointerHeight: CGFloat = 55
 
 struct TempoButton: View {
     
-    let width: CGFloat = 166
+//    let width: CGFloat = 166
+    var width = UIScreen.main.bounds.width / 2
+    
+    @StateObject var homeData = HomeViewModel()
+    
     
     var body: some View {
         
         ZStack {
-            
             //Circle
             Image(systemName: "circle")
                 .foregroundColor(.red)
-                .frame(width: width, height: width)
+                .frame(width: width - 14, height: width - 14)
                 .background(
                     ZStack {
                         Color.red
@@ -47,7 +50,19 @@ struct TempoButton: View {
             
             //Pointer
             Pointer()
-                .offset(x: 0, y: width - (55 * 4) - 1.5)
+                .rotationEffect(.init(degrees: -90))
+            // moving view to left...
+                .offset(x: (width - 70) / 2)
+                .rotationEffect(.init(degrees: homeData.angle))
+            // adding gesture
+                .gesture(
+                    DragGesture(minimumDistance: 0).onChanged(homeData.onChanged(value:))
+                )
+            // rotating to start point...
+            // 240 - 30 = 210
+                .rotationEffect(.init(degrees: -210))
+            
+            
         }
     }
 }
