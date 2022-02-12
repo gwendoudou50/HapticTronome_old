@@ -12,7 +12,7 @@ let pointerHeight: CGFloat = 55
 
 struct TempoButton: View {
     
-//    let width: CGFloat = 166
+    // taille de l'ecran
     var width = UIScreen.main.bounds.width / 2
     
     @ObservedObject var homeData = HomeViewModel()
@@ -25,6 +25,7 @@ struct TempoButton: View {
             Image(systemName: "circle")
                 .foregroundColor(.red)
                 .frame(width: width - 14, height: width - 14)
+            // inner shadows
                 .background(
                     ZStack {
                         Color.red

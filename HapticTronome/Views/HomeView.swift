@@ -36,7 +36,6 @@ struct HomeView: View {
                 VStack {
                     VStack {
                         Text(String(format: "%.0f", 40 + homeData.progress * (400 - 40)))
-//                        Text("40")
                             .font(.title)
                             .fontWeight(.bold)
 
