@@ -8,7 +8,12 @@
 import Foundation
 import SwiftUI
 
-class HomeViewModel: ObservableObject {
+final class HomeViewModel: ObservableObject {
+    private(set) var hapticTronome: HapticTronome
+    
+    init(hapticTronome: HapticTronome) {
+        self.hapticTronome = hapticTronome
+    }
     
     @Published var progress: CGFloat = 0
     @Published var angle: Double = 0
@@ -37,4 +42,18 @@ class HomeViewModel: ObservableObject {
             self.angle = Double(angle)
         }
     }
+}
+
+struct HapticTronome {
+    let id = UUID()
+    let firstTic: String
+    let tic: String
+    let timeSignature: TimeSignature
+    
+    struct TimeSignature {
+        var numerator: Int
+        var denominator: Int
+    }
+    
+    static let data = HapticTronome(firstTic: "kick", tic: "hit-hat", timeSignature: .init(numerator: 4, denominator: 4))
 }

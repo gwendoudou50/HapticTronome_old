@@ -7,13 +7,10 @@
 
 import Foundation
 import AVKit
+import SwiftUI
 
 final class AudioManager: ObservableObject {
     
-//    static let shared = AudioManager()
-    
-    let firstTic: String = "firstTic"
-    let tic: String = "hit-hat"
     var player: AVAudioPlayer?
     @Published private(set) var isPlaying: Bool = false {
         didSet {
@@ -21,35 +18,42 @@ final class AudioManager: ObservableObject {
         }
     }
     
-    func startPlayer() {
-        //        let firstUrl = Bundle.main.url(forResource: firstTic, withExtension: "mp3")
-        guard let url = Bundle.main.url(forResource: tic, withExtension: "wav") else {
+    var timer = Timer()
+    
+    func startPlayer(tic: String) {
+        
+        guard let tic = Bundle.main.url(forResource: tic, withExtension: "wav") else {
             print("Ressource not found")
             return
         }
         
+        
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
-            //            firstTic = try AVAudioPlayer(contentsOf: firstUrl!)
-            player = try AVAudioPlayer(contentsOf: url)
+    
+            player = try AVAudioPlayer(contentsOf: tic)
             
-            player?.play()
             isPlaying = true
+            timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+                self.player?.currentTime = 0
+                self.player?.play()
+            }
+            
         } catch {
-            print("F    ail to initialize player", error)
+            print("Fail to initialize player", error)
         }
     }
     
-    func Stop() {
+    func stop() {
         guard let player = player else {
             print("Don't work")
             return
         }
-        
+
         if player.isPlaying {
             print("is playing")
-            player.stop()
+            timer.invalidate()
             isPlaying = false
         }
     }

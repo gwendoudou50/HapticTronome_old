@@ -15,7 +15,7 @@ struct TempoButton: View {
     // taille de l'ecran
     var width = UIScreen.main.bounds.width / 2
     
-    @ObservedObject var homeData = HomeViewModel()
+    @ObservedObject var homeData = HomeViewModel(hapticTronome: HapticTronome.data)
     
     
     var body: some View {

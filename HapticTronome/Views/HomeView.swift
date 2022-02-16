@@ -12,10 +12,11 @@ struct HomeView: View {
     let BpmMin = 40
     let BpmMax = 400
     
-    @StateObject var homeData = HomeViewModel()
-    
+    @StateObject var homeData = HomeViewModel(hapticTronome: HapticTronome.data)
     @EnvironmentObject var audioManager: AudioManager
     @State var player = AudioManager().player?.isPlaying
+    
+    
     
     var body: some View {
         NavigationView {
@@ -71,9 +72,8 @@ struct HomeView: View {
                 // Buttons Action
                 HStack {
                     Button {
-//                        print("Play button was tapped")
-//                        AudioManager.shared.startPlayer()
-                        audioManager.isPlaying ? self.audioManager.Stop() : self.audioManager.startPlayer()
+//                        audioManager.isPlaying ? self.audioManager.stop() : self.audioManager.startPlayer(firstTic: homeData.hapticTronome.firstTic, tic: homeData.hapticTronome.tic)
+                        audioManager.isPlaying ? self.audioManager.stop() : self.audioManager.startPlayer(tic: homeData.hapticTronome.tic)
                     } label: {
                         Image(systemName: audioManager.isPlaying ? "stop" : "play")
                     }.buttonStyle(ButtonAction())
@@ -82,6 +82,7 @@ struct HomeView: View {
                     
                     Button {
                         print("Settings button was tapped")
+                        self.audioManager.stop()
                     } label: {
                         Text("4/4")
                     }.buttonStyle(ButtonAction())
