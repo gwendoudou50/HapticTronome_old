@@ -9,9 +9,6 @@ import SwiftUI
 
 struct HomeView: View {
     
-    let BpmMin = 40
-    let BpmMax = 400
-    
     @StateObject var homeData = HomeViewModel(hapticTronome: HapticTronome.data)
     @EnvironmentObject var audioManager: AudioManager
     @State var player = AudioManager().player?.isPlaying
@@ -42,7 +39,7 @@ struct HomeView: View {
                 // Tempo Button
                 VStack {
                     VStack {
-                        Text("\(Int(40 + homeData.progress * (400 - 40)))")
+                        Text("\(homeData.tempo)")
                         .font(.title)
                             .fontWeight(.bold)
 
@@ -60,9 +57,9 @@ struct HomeView: View {
                     .padding(.bottom, -50)
                     
                     HStack {
-                        Text("\(BpmMin)")
+                        Text("\(homeData.hapticTronome.bpmMin)")
                             .padding(.horizontal, 75)
-                        Text("\(BpmMax)")
+                        Text("\(homeData.hapticTronome.bpmMax)")
                             .padding(.horizontal,75)
                     }
                     .font(.subheadline)
@@ -72,8 +69,7 @@ struct HomeView: View {
                 // Buttons Action
                 HStack {
                     Button {
-//                        audioManager.isPlaying ? self.audioManager.stop() : self.audioManager.startPlayer(firstTic: homeData.hapticTronome.firstTic, tic: homeData.hapticTronome.tic)
-                        audioManager.isPlaying ? self.audioManager.stop() : self.audioManager.startPlayer(tic: homeData.hapticTronome.tic)
+                        audioManager.isPlaying ? self.audioManager.stop() : self.audioManager.startPlayer(tic: homeData.hapticTronome.tic, tempo: Double(self.homeData.tempo))
                     } label: {
                         Image(systemName: audioManager.isPlaying ? "stop" : "play")
                     }.buttonStyle(ButtonAction())

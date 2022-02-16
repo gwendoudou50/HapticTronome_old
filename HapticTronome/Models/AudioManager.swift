@@ -11,6 +11,10 @@ import SwiftUI
 
 final class AudioManager: ObservableObject {
     
+//    @StateObject var homeData = HomeViewModel(hapticTronome: HapticTronome.data)
+//    @Published var homeData: HomeViewModel = HomeViewModel.init(hapticTronome: .data)
+//    @State var tempo = HomeViewModel.getTempo(.init(hapticTronome: .data))
+    
     var player: AVAudioPlayer?
     @Published private(set) var isPlaying: Bool = false {
         didSet {
@@ -20,7 +24,7 @@ final class AudioManager: ObservableObject {
     
     var timer = Timer()
     
-    func startPlayer(tic: String) {
+    func startPlayer(tic: String, tempo: Double) {
         
         guard let tic = Bundle.main.url(forResource: tic, withExtension: "wav") else {
             print("Ressource not found")
@@ -35,13 +39,7 @@ final class AudioManager: ObservableObject {
             player = try AVAudioPlayer(contentsOf: tic)
             
             isPlaying = true
-            
-//            timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-//                self.player?.currentTime = 0
-//                self.player?.play()
-//            }
-        
-            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 60 / tempo, target: self, selector: #selector(play), userInfo: nil, repeats: true)
             RunLoop.current.add(timer, forMode: .common)
             
         } catch {
@@ -49,7 +47,7 @@ final class AudioManager: ObservableObject {
         }
     }
     
-    @objc func fireTimer() {
+    @objc func play() {
         self.player?.currentTime = 0
         self.player?.play()
     }
@@ -61,9 +59,9 @@ final class AudioManager: ObservableObject {
         }
 
         if player.isPlaying {
-            print("is playing")
             timer.invalidate()
             isPlaying = false
         }
     }
 }
+

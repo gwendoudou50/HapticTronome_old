@@ -17,6 +17,10 @@ final class HomeViewModel: ObservableObject {
     
     @Published var progress: CGFloat = 0
     @Published var angle: Double = 0
+    @Published var tempo: Int = 40
+    
+    var bpmMin: CGFloat = CGFloat(HapticTronome.data.bpmMin)
+    var bpmMax: CGFloat = CGFloat(HapticTronome.data.bpmMax)
     
     // it used when the button is turning
     func onChanged(value: DragGesture.Value) {
@@ -37,23 +41,27 @@ final class HomeViewModel: ObservableObject {
         
         // limiting angle from 0 to 240
         if angle <= 240 {
-            let progress = angle / 240
-            self.progress = progress
-            self.angle = Double(angle)
+            withAnimation(Animation.linear(duration: 0.1)) {
+                let progress = angle / 240
+                self.progress = progress
+                self.angle = Double(angle)
+                self.tempo = Int((bpmMin + self.progress * (bpmMax - bpmMin))) // converting progress in bpm
+            }
         }
     }
 }
 
 struct HapticTronome {
     let id = UUID()
-    let firstTic: String
     let tic: String
     let timeSignature: TimeSignature
+    let bpmMin: Int
+    let bpmMax: Int
     
     struct TimeSignature {
         var numerator: Int
         var denominator: Int
     }
     
-    static let data = HapticTronome(firstTic: "kick", tic: "hit-hat", timeSignature: .init(numerator: 4, denominator: 4))
+    static let data = HapticTronome(tic: "hit-hat", timeSignature: .init(numerator: 4, denominator: 4), bpmMin: 40, bpmMax: 400)
 }
