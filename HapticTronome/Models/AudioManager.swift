@@ -35,14 +35,23 @@ final class AudioManager: ObservableObject {
             player = try AVAudioPlayer(contentsOf: tic)
             
             isPlaying = true
-            timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-                self.player?.currentTime = 0
-                self.player?.play()
-            }
+            
+//            timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+//                self.player?.currentTime = 0
+//                self.player?.play()
+//            }
+        
+            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
+            RunLoop.current.add(timer, forMode: .common)
             
         } catch {
             print("Fail to initialize player", error)
         }
+    }
+    
+    @objc func fireTimer() {
+        self.player?.currentTime = 0
+        self.player?.play()
     }
     
     func stop() {
