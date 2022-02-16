@@ -19,6 +19,7 @@ final class HomeViewModel: ObservableObject {
     @Published var angle: Double = 0
     @Published var tempo: Int = 40
     
+    // To comvert into CGFloat type
     var bpmMin: CGFloat = CGFloat(HapticTronome.data.bpmMin)
     var bpmMax: CGFloat = CGFloat(HapticTronome.data.bpmMax)
     
@@ -45,12 +46,15 @@ final class HomeViewModel: ObservableObject {
                 let progress = angle / 240
                 self.progress = progress
                 self.angle = Double(angle)
-                self.tempo = Int((bpmMin + self.progress * (bpmMax - bpmMin))) // converting progress in bpm
+                
+                // converting progress in bpm
+                self.tempo = Int((bpmMin + self.progress * (bpmMax - bpmMin)))
             }
         }
     }
 }
 
+// Constructor
 struct HapticTronome {
     let id = UUID()
     let tic: String
@@ -63,5 +67,6 @@ struct HapticTronome {
         var denominator: Int
     }
     
+    // default value
     static let data = HapticTronome(tic: "hit-hat", timeSignature: .init(numerator: 4, denominator: 4), bpmMin: 40, bpmMax: 400)
 }

@@ -11,18 +11,13 @@ import SwiftUI
 
 final class AudioManager: ObservableObject {
     
-//    @StateObject var homeData = HomeViewModel(hapticTronome: HapticTronome.data)
-//    @Published var homeData: HomeViewModel = HomeViewModel.init(hapticTronome: .data)
-//    @State var tempo = HomeViewModel.getTempo(.init(hapticTronome: .data))
-    
+    var timer = Timer() // for time interval between each tic
     var player: AVAudioPlayer?
     @Published private(set) var isPlaying: Bool = false {
         didSet {
             print("isPlaying", isPlaying)
         }
     }
-    
-    var timer = Timer()
     
     func startPlayer(tic: String, tempo: Double) {
         
@@ -33,12 +28,15 @@ final class AudioManager: ObservableObject {
         
         
         do {
+            // continue to play even app is in background
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
     
             player = try AVAudioPlayer(contentsOf: tic)
             
             isPlaying = true
+            
+            // play the player variable to each time interval
             timer = Timer.scheduledTimer(timeInterval: 60 / tempo, target: self, selector: #selector(play), userInfo: nil, repeats: true)
             RunLoop.current.add(timer, forMode: .common)
             
@@ -52,7 +50,8 @@ final class AudioManager: ObservableObject {
         self.player?.play()
     }
     
-    func stop() {
+    
+    func stopPlayer() {
         guard let player = player else {
             print("Don't work")
             return

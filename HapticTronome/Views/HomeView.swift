@@ -13,8 +13,6 @@ struct HomeView: View {
     @EnvironmentObject var audioManager: AudioManager
     @State var player = AudioManager().player?.isPlaying
     
-    
-    
     var body: some View {
         NavigationView {
             VStack {
@@ -69,7 +67,7 @@ struct HomeView: View {
                 // Buttons Action
                 HStack {
                     Button {
-                        audioManager.isPlaying ? self.audioManager.stop() : self.audioManager.startPlayer(tic: homeData.hapticTronome.tic, tempo: Double(self.homeData.tempo))
+                        audioManager.isPlaying ? self.audioManager.stopPlayer() : self.audioManager.startPlayer(tic: homeData.hapticTronome.tic, tempo: Double(self.homeData.tempo))
                     } label: {
                         Image(systemName: audioManager.isPlaying ? "stop" : "play")
                     }.buttonStyle(ButtonAction())
@@ -78,7 +76,6 @@ struct HomeView: View {
                     
                     Button {
                         print("Settings button was tapped")
-                        self.audioManager.stop()
                     } label: {
                         Text("4/4")
                     }.buttonStyle(ButtonAction())
