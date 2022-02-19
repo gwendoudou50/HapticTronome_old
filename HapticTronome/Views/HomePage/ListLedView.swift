@@ -10,6 +10,8 @@ import SwiftUI
 struct ListLedView: View {
     
     @Binding var secondLapsed: Int
+    @Binding var isPlaying: Bool
+
     
     let rows = [
         GridItem(.flexible())
@@ -18,8 +20,12 @@ struct ListLedView: View {
     var body: some View {
         LazyHGrid(rows: rows, spacing: 57) {
             ForEach(0..<4) { led in
-                if secondLapsed == led {
-                    LedView(color: .red)
+                if (isPlaying) {
+                    if (secondLapsed == led) {
+                        LedView(color: .red)
+                    } else {
+                        LedView(color: .white)
+                    }
                 } else {
                     LedView(color: .white)
                 }
@@ -28,9 +34,3 @@ struct ListLedView: View {
         .frame(height: 100)
     }
 }
-
-//struct ListLedView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ListLedView()
-//    }
-//}

@@ -11,8 +11,7 @@ struct HomeView: View {
     
     @StateObject var homeData = HomeViewModel(hapticTronome: HapticTronome.data)
     @EnvironmentObject var audioManager: AudioManager
-    @State var player = AudioManager().player?.isPlaying
-//    @State var secondLapsed = AudioManager().secondLapsed
+    @State var test = false
     
     var body: some View {
         NavigationView {
@@ -20,8 +19,7 @@ struct HomeView: View {
                 Spacer()
                 
                 // LED
-//                let _ = print(secondLapsed)
-                ListLedView(secondLapsed: $audioManager.secondLapsed)
+                ListLedView(secondLapsed: $audioManager.secondLapsed, isPlaying: $audioManager.isPlayingView)
                     .shadow(color: .black.opacity(0.25), radius: 4, x: 2, y: 2)
                     .padding(-10)
             
