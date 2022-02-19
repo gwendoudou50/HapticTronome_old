@@ -15,9 +15,12 @@ final class HomeViewModel: ObservableObject {
         self.hapticTronome = hapticTronome
     }
     
+    @ObservedObject var audioManager = AudioManager()
+    
     @Published var progress: CGFloat = 0
     @Published var angle: Double = 0
     @Published var tempo: Int = 40
+    
     
     // To comvert into CGFloat type
     var bpmMin: CGFloat = CGFloat(HapticTronome.data.bpmMin)

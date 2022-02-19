@@ -1,8 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "Logo.pdf",
       "idiom" : "universal"
+    },
+    {
+      "filename" : "Logo.pdf",
+      "idiom" : "iphone"
     }
   ],
   "info" : {
@@ -10,6 +13,7 @@
     "version" : 1
   },
   "properties" : {
+    "localizable" : true,
     "preserves-vector-representation" : true
   }
 }

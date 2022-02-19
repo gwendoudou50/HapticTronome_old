@@ -16,6 +16,7 @@ struct TempoButton: View {
     var width = UIScreen.main.bounds.width / 2
     
     @ObservedObject var homeData = HomeViewModel(hapticTronome: HapticTronome.data)
+    @State var isPlaying = AudioManager().isPlaying
     
     
     var body: some View {

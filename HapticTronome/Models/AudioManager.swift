@@ -11,6 +11,7 @@ import SwiftUI
 
 final class AudioManager: ObservableObject {
     
+    @Published var secondLapsed = 0
     var timer = Timer() // for time interval between each tic
     var player: AVAudioPlayer?
     @Published private(set) var isPlaying: Bool = false {
@@ -34,7 +35,7 @@ final class AudioManager: ObservableObject {
     
             player = try AVAudioPlayer(contentsOf: tic)
             
-            isPlaying = true
+            self.isPlaying = true
             
             // play the player variable to each time interval
             timer = Timer.scheduledTimer(timeInterval: 60 / tempo, target: self, selector: #selector(play), userInfo: nil, repeats: true)
@@ -46,8 +47,16 @@ final class AudioManager: ObservableObject {
     }
     
     @objc func play() {
+        if secondLapsed < 3 {
+//            self.player?.currentTime = 0
+//            self.player?.play()
+            secondLapsed += 1
+        } else {
+            secondLapsed = 0
+        }
         self.player?.currentTime = 0
         self.player?.play()
+//        print(secondLapsed)
     }
     
     
@@ -58,8 +67,9 @@ final class AudioManager: ObservableObject {
         }
 
         if player.isPlaying {
+//            updateBpm(tempo: Double(50))
             timer.invalidate()
-            isPlaying = false
+            self.isPlaying = false
         }
     }
 }
