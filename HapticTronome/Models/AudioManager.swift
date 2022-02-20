@@ -46,6 +46,7 @@ final class AudioManager: ObservableObject {
             
             secondLapsed = 0
             player?.play()
+            HapticManager().impact(style: .heavy)
             // play the player variable to each time interval
             timer = Timer.scheduledTimer(timeInterval: 60 / tempo, target: self, selector: #selector(play), userInfo: nil, repeats: true)
             RunLoop.current.add(timer, forMode: .common)
@@ -60,7 +61,7 @@ final class AudioManager: ObservableObject {
     @objc func play() {
         self.player?.currentTime = 0
         self.player?.play()
-        HapticManager().impact(style: .rigid)
+        HapticManager().impact(style: .heavy)
         if secondLapsed < 3 && self.isPlayingView {
             secondLapsed += 1
         } else {
