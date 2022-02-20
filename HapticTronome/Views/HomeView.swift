@@ -12,6 +12,8 @@ struct HomeView: View {
     @StateObject var homeData = HomeViewModel(hapticTronome: HapticTronome.data)
     @EnvironmentObject var audioManager: AudioManager
     @State var test = false
+    @StateObject var hapticManager = HapticManager()
+
     
     var body: some View {
         NavigationView {
@@ -26,7 +28,7 @@ struct HomeView: View {
                 Spacer()
                 
                 // Logo
-                Image("HapticTronomeLogoBis")
+                Image("LaunchScreenLogo")
                     .resizable()
                     .scaledToFill()
                     .frame(width: 203, height: 203)
@@ -76,6 +78,8 @@ struct HomeView: View {
                     
                     Button {
                         print("Settings button was tapped")
+//                        hapticManager.notification(type: .warning)
+                        hapticManager.impact(style: .rigid)
                     } label: {
                         Text("4/4")
                     }.buttonStyle(ButtonAction())

@@ -60,6 +60,7 @@ final class AudioManager: ObservableObject {
     @objc func play() {
         self.player?.currentTime = 0
         self.player?.play()
+        HapticManager().impact(style: .rigid)
         if secondLapsed < 3 && self.isPlayingView {
             secondLapsed += 1
         } else {
